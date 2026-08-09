@@ -1,0 +1,42 @@
+{
+	"name": "@stefanobalocco/identicolor",
+	"description": "Deterministic pastel SVG avatars from a hexadecimal hash",
+	"exports": {
+		".": {
+			"types": "./dist/IdentiColor.d.ts",
+			"default": "./dist/IdentiColor.min.js"
+		}
+	},
+	"types": "dist/IdentiColor.d.ts",
+	"files": [
+		"dist/IdentiColor.js",
+		"dist/IdentiColor.min.js",
+		"dist/IdentiColor.d.ts"
+	],
+	"type": "module",
+	"version": "1.0.0",
+	"keywords": [
+		"identicon",
+		"avatar",
+		"svg",
+		"hash",
+		"pastel"
+	],
+	"author": "Stefano Balocco <stefano.balocco@gmail.com>",
+	"license": "BSD-3-Clause",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsBuild all",
+		"build:library": "tsBuild library",
+		"build:tests": "tsBuild tests",
+		"tests": "c8 --include=src --include=dist --exclude-after-remap --per-file --reporter=text --reporter=lcov ava tests/dist/*.test.js --verbose"
+	},
+	"devDependencies": {
+		"@stefanobalocco/tsbuild": "^1",
+		"@types/node": "^24",
+		"ava": "^8",
+		"c8": "^12"
+	}
+}
